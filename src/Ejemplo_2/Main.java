@@ -1,86 +1,62 @@
 package Ejemplo_2;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
 
 	public static void main(String[] args) {
-		
-		File f = new File("pass.dat");
-		
-		if (!f.exists()) {
+
+		Scanner leer = new Scanner(System.in);
+		boolean añadir, save;
+		String usuario;
+		int pass;
+
+	/*	Pass vPass[] = new Pass[10];
+		vPass[0] = new Pass("Juan", 1, false);
+		vPass[1] = new Pass("Pepe", 2, true);
+		vPass[2] = new Pass("Adelin", 3, true);
+		vPass[3] = new Pass("Jordi", 4, false);
+/*
+		for (int i = 0; i < vPass.length; i++) {
+			añadir = false;
 			try {
-				f.createNewFile();
-			} catch (IOException e) {
-				e.printStackTrace();
+				if (vPass[i] == null) {
+					System.out.println("Quieres añadir usuarios?");
+					añadir = leer.nextBoolean();
+					if (añadir == true) {
+						System.out.println("Dime el nombre de usuario");
+						usuario = leer.next();
+						System.out.println("Dime su contraseña");
+						pass = leer.nextInt();
+						System.out.println("Dime si es segura");
+						save = leer.nextBoolean();
+
+						vPass[i] = new Pass(usuario, pass, save);
+
+						añadir = false;
+					}else {
+						break;
+					}
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			
+		}
+*/
+		//IOData.guardarDatos("pass.dat", vPass);
+		//IOData.guardarObjetos("objetosDatos2.dat", vPass);
+		
+		Pass vPass[] = IOData.leerobjetos("objetosDatos2.dat");
+		
+		for (Pass p : vPass) {
+			if (p != null) {
+				System.out.println(p.toString());
 			}
 		}
 		
 		
-		try (FileOutputStream fo = new FileOutputStream(f);
-			 DataOutputStream escribir = new DataOutputStream(fo);){
-			
-			Scanner leer = new Scanner(System.in);
-			
-			String nom,pass,des;
-			
-			System.out.println("Dime el nombre de usuario");
-			nom = leer.next();
-			escribir.writeUTF(nom);
-			
-			System.out.println("Dime la contraseña");
-			pass= leer.next();
-			escribir.writeUTF(cambiarContraseña(pass));
-			
-			System.out.println("Dime la web para registrarte");
-			des = leer.next();
-			escribir.writeUTF(des);
-			
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		
-		
-		try (FileInputStream fi = new FileInputStream(f);
-			 DataInputStream leer = new DataInputStream(fi);){
-			
-			
-			while (true) {
-				System.out.println();
-				System.out.println();
-			System.out.println("El usuario "+leer.readUTF());
-			System.out.println("Con contraseña "+leer.readUTF());
-			System.out.println("De la pagina "+leer.readUTF());
-			}
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e1) {
-			System.out.println("");
-		}
-		
-	}
-	
-	private static String cambiarContraseña(String pass) {
-		
-		String contrasena="";
-		for (int i = 0; i < pass.length(); i++) {
-			contrasena +="*";
-		}
-		return contrasena;
-		
+
 	}
 
 }
