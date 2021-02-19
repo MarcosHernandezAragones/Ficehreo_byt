@@ -5,10 +5,12 @@ public class Main {
 	public static void main(String[] args) {
 		Venta[] vVentas;
 		
-		/*vVentas[0] = new Ventas("Javier", 4, 5, 5);
+		/*
+		vVentas[0] = new Ventas("Javier", 4, 5, 5);
 		vVentas[1] = new Ventas("Pedro", 4, 5, 5);
 		vVentas[2] = new Ventas("Juan", 4, 5, 5);
-		vVentas[3] = new Ventas("Pepe", 4, 5, 5);*/
+		vVentas[3] = new Ventas("Pepe", 4, 5, 5);
+		*/
 		
 		//IODatos.guardarDatos("Ventas.dat", vVenta);
 		
