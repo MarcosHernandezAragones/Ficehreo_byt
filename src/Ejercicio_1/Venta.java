@@ -3,14 +3,15 @@ package Ejercicio_1;
 public class Venta {
 	
 	String cliente;
-	int producto,cantidad;
-	double precioUnitario;
+	int codProducto;
+	int uniVendidas;
+	double precio;
 	
-	public Venta(String cliente, int producto, int cantidad, double precioUnitario) {
+	public Venta(String cliente, int codProducto, int uniVendidas, double precio) {
 		this.cliente = cliente;
-		this.producto = producto;
-		this.cantidad = cantidad;
-		this.precioUnitario = precioUnitario;
+		this.codProducto = codProducto;
+		this.uniVendidas = uniVendidas;
+		this.precio = precio;
 	}
 
 	public String getCliente() {
@@ -21,33 +22,34 @@ public class Venta {
 		this.cliente = cliente;
 	}
 
-	public int getProducto() {
-		return producto;
+	public int getCodProducto() {
+		return codProducto;
 	}
 
-	public void setProducto(int producto) {
-		this.producto = producto;
+	public void setCodProducto(int codProducto) {
+		this.codProducto = codProducto;
 	}
 
-	public int getCantidad() {
-		return cantidad;
+	public int getUniVendidas() {
+		return uniVendidas;
 	}
 
-	public void setCantidad(int cantidad) {
-		this.cantidad = cantidad;
+	public void setUniVendidas(int uniVendidas) {
+		this.uniVendidas = uniVendidas;
 	}
 
-	public double getPrecioUnitario() {
-		return precioUnitario;
+	public double getPrecio() {
+		return precio;
 	}
 
-	public void setPrecioUnitario(double precioUnitario) {
-		this.precioUnitario = precioUnitario;
+	public void setPrecio(double precio) {
+		this.precio = precio;
 	}
 
 	@Override
 	public String toString() {
-		return "Venta cliente " + cliente + " producto " + producto + " cantidad " + cantidad + " precioUnitario "+ precioUnitario;
+		return "Ventas [cliente=" + cliente + ", codProducto=" + codProducto + ", uniVendidas=" + uniVendidas
+				+ ", precio=" + precio + "]";
 	}
 	
 	
