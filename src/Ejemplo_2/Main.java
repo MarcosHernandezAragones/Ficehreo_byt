@@ -7,7 +7,7 @@ public class Main {
 	public static void main(String[] args) {
 
 		Scanner leer = new Scanner(System.in);
-		boolean aÃ±adir, save;
+		boolean añadir, save;
 		String usuario;
 		int pass;
 
